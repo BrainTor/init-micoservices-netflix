@@ -13,7 +13,7 @@
 Этот пример позволяет быстро развернуть и протестировать базовую микросервисную архитектуру с минимальными настройками.
 
 ## Чтобы создать новый сервис:
-spring init --boot-version=3.5.5 --java-version=21 --dependencies=actuator,web,cloud-eureka --build=gradle название сервиса
+spring init --boot-version=3.5.5 --java-version=21 --dependencies=actuator,web,cloud-eureka --build=gradle название сервиса --type gradle-project-kotlin
 ## После создания сервиса:
 его надо его зарегистрировать в  api-gateway и в settings.gradle
 ##  Для  даннной установки необходимо spring cli
