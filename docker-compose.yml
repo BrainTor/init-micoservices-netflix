@@ -1,0 +1,35 @@
+services: 
+  eureka:
+    build: ./eureka
+    ports:
+      - "8761:8761"
+    networks:
+      - netflix-network
+
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - eureka
+    networks:
+      - netflix-network
+
+  order-service:
+    build: ./order-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - eureka
+      - product-service
+    networks:
+      - netflix-network
+
+  product-service:
+    build: ./product-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - eureka
+    networks:
+      - netflix-network
